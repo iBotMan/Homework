@@ -9,13 +9,10 @@ Output: {",": 1, " ": 3, "o": 2, "h": 2, "i": 2, "t": 2, "s": 1, "p": 1, "y": 1,
 
 
 def main():
-    string = "Oh, it is python"
+    string = "Oh, it is python".lower()
     dict_char = {}
-    for character in string.lower():
-        if character not in dict_char:
-            dict_char[character] = 1
-        else:
-            dict_char[character] += 1
+    for character in set(string):
+        dict_char[character] = string.count(character)
     print(dict_char)
 
 
