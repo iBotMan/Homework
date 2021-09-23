@@ -1,5 +1,13 @@
-import mod_c
-import mod_b
+from mod_c import *
+#import mod_b
 
+print(globals())
 
-print(mod_c.x)
+def set_a():
+    print(x)
+    def dsddd():
+        print(x)
+    dsddd()
+
+set_a()
+
