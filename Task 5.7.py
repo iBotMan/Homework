@@ -46,6 +46,7 @@ if name == "__main__":
 
     3) Try to change import to `from x import *` where x - module names. Explain the result.
         after `from x import *`, we got { module 'builtins' (built-in) } and can use variables like global.
+        overwrite all variables 
         from mod_c import *
             mode_a (get x => 5)
             mode_a (set x = [1,2,3])
