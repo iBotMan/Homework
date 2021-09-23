@@ -33,7 +33,7 @@ def most_common_words(file_path, number_of_words=3):
 
     with open('data/'+file_path, 'r') as lorem_ipsum_txt:
         for line in lorem_ipsum_txt:
-            line = line * 9999
+            #line = line * 9999
             #for word in get_clear_string(line.lower()).split():
             for word in line.lower().split():
                 if not word[-1].isalnum():
