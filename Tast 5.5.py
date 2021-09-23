@@ -9,6 +9,8 @@ def remember_result(func):
 	def wrapper(*args):
 		global last_result
 		print(f"Last result = '{last_result}'")
+		if isinstance(args[0], int):
+			args = str(sum(args))
 		last_result = func(*args)
 		return func
 	return wrapper
