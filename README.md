@@ -1,33 +1,51 @@
-# Homework
-Homework for EPAM Python Training 2021.09
+# RSS reader
+RSS 2.0 reader is a command-line utility which receives RSS URL and prints results in human-readable
+format.
 
-# How to push tasks into github repo
+[The source for this project is available here](https://github.com/iBotMan/rss_reader).
 
-1. Create fork from the following repo: https://github.com/E-P-T/Homework. (Docs: https://docs.github.com/en/get-started/quickstart/fork-a-repo )
-1. Clone your forked repo in your local folder. 
-1. Create separate branches for each session.Example(session_2, session_3 and so on)      
-1. Create folder with you First and Last name in you forked repo in the created session.
-1. Add your task into created folder
-1. Push finished session task in the appropriate branch in accordance with written above.    
- You should get the structure that looks something like that
-```
- Branch: Session_2  
-        DzmitryKolb
-             |___ Task1.py            
-             |___ Task2.py
- 
- Branch: Session_3  
-         DzmitryKolb
-              |___ Task1.py             
-              |___ Task2.py
 
-```
-1. When you finish your work on the task you should create Pull request to the appropriate branch of the main repo https://github.com/E-P-T/Homework (Docs: https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
+### Installation
+$ pip install rss_reader_BotMan
 
-Please use the following instructions to prepare good description of the pull request:
+### Usage
+$ rss_reader (-h | --help)
 
-Pull request header should be: Session <Number of the session> - <FirstName> <LastName>.
-> Example: Session 2 - Dzmitry Kolb 
+    Show help message and exit
 
-Pull request body: You should write here what tasks were implemented.
-> Example: Finished: Task 1.2, Task 1.3, Task 1.6      
+$ rss_reader <RSS-SOURCE-LINK>
+
+    Print rss feeds in human-readable format
+
+$ rss_reader --version
+
+    Print version info
+
+$ rss_reader --json
+
+    Print result as JSON in stdout
+
+$ rss_reader.py --verbose
+
+    Outputs verbose status messages
+    
+$ rss_reader.py --limit LIMIT
+
+    Limit news topics, if this parameter provided
+    
+$ rss_reader.py --date DATE
+
+    Gets a date in %Y%m%d format. Print news from the specified date
+    and source (<RSS-SOURCE-LINK>), if it specified
+
+$ rss_reader.py --to-pdf PATH_TO_PDF
+
+    Gets file path. Convert news to pdf and save them to pdf file on the specified path
+
+$ rss_reader.py --to-html PATH_TO_HTML
+
+    Gets file path. Convert news to html and save them to html file on the specified path
+
+### Storage
+All the pieces of news received from the source are saved to the SQLite database.
+DBConnector module is used for this. It saves object Item to SQLite database.
